@@ -15,7 +15,7 @@ var methods = {
 CreateHiddenWord: function(newWord){
      randomWord = word.turnToArray.selectedWord;
 
-    wordLetters = newWord.split('').join(' ');
+    wordLetters = newWord.split('').join('');
     exports.splitWord = {
         wordLetters: wordLetters
     };

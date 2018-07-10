@@ -4,7 +4,7 @@ var letter = require("./letter.js");
 var prompt = require('prompt');
 
 var wordChoices = [];
-
+var hiddenWord = [];
 var Word = function(newWord){
     this.newWord = newWord;
     wordChoices.push(newWord);
@@ -42,7 +42,14 @@ exports.turnToArray = {
 getWord.data.CreateHiddenWord(selectedWord);
 var wordLetters = getWord.splitWord.wordLetters;
 console.log(wordLetters);
+// var hiddenWord = wordLetters;
+for(var i = 0; i<wordLetters.length; i++){
+hiddenWord += "#";
 
+
+
+}
+console.log(hiddenWord);
 
 prompt.start();
 
@@ -54,7 +61,8 @@ prompt.get(['letter'], function (err, result) {
     var userLetter = result.letter;
     exports.gameData = {
         userLetter: userLetter,
-        wordLetters: wordLetters
+        wordLetters: wordLetters,
+        hiddenWord: hiddenWord
     };
     console.log('Command-line input received:');
     console.log('  letter: ' + result.letter);
