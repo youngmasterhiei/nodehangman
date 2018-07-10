@@ -1,20 +1,24 @@
-var letter = require("./letter.js");
+var word = require("./index.js");
 
-var wordChoices = [];
-var word = function(newWord){
-    this.newWord = newWord;
-    wordChoices.push(newWord);
-    
 
+var wordLetters = [];
+
+var randomWord = "";
+
+
+
+console.log(randomWord);
+
+var methods = {
+
+CreateHiddenWord: function(newWord){
+     randomWord = word.turnToArray.selectedWord;
+
+    wordLetters = newWord.split('').join(',');
+    console.log(wordLetters);
+}
 };
 
-var choice1 = word("jurrasic");
-var choice2 = word("cryptocurrency");
-var choice3 = word("function");
-var choice4 = word("bananas");
-var choice5 = word("stackoverflow");
-var choice6 = word("javascript");
-
-exports.wordArray = {
-    wordChoices: wordChoices
-};
+exports.data = methods;
+// CreateHiddenWord(randomWord);
+// console.log(wordLetters);
