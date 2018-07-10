@@ -1,6 +1,5 @@
 var getWord = require("./word.js");
 var letter = require("./letter.js");
-var cheerio = require('cheerio');
 
 var prompt = require('prompt');
 

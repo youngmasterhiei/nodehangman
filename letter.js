@@ -1,4 +1,3 @@
-var cheerio = require('cheerio');
 var getData = require("./index.js");
 
 

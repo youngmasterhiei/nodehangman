@@ -1,5 +1,4 @@
 var word = require("./index.js");
-var cheerio = require('cheerio');
 
 
 
