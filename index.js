@@ -1,5 +1,6 @@
 var getWord = require("./word.js");
-// var letter = require("./letter.js");
+var letter = require("./letter.js");
+var cheerio = require('cheerio');
 
 var prompt = require('prompt');
 
@@ -40,20 +41,24 @@ exports.turnToArray = {
 
 
 getWord.data.CreateHiddenWord(selectedWord);
+var wordLetters = getWord.splitWord.wordLetters;
+console.log(wordLetters);
 
-// prompt.start();
 
-// prompt.get(['letter'], function (err, result) {
-//     //
-//     // Log the results.
-//     //
+prompt.start();
 
-//     var userLetter = result.letter;
-//     exports.guessedLetter = {
-//         userLetter: userLetter
-//     };
-//     console.log('Command-line input received:');
-//     console.log('  letter: ' + result.letter);
-//     letter.data.testLetter(result.letter);
-//   });
+prompt.get(['letter'], function (err, result) {
+    //
+    // Log the results.
+    //
+
+    var userLetter = result.letter;
+    exports.gameData = {
+        userLetter: userLetter,
+        wordLetters: wordLetters
+    };
+    console.log('Command-line input received:');
+    console.log('  letter: ' + result.letter);
+    letter.data.testLetter(result.letter);
+  });
 

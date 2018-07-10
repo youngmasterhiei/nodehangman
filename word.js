@@ -1,4 +1,6 @@
 var word = require("./index.js");
+var cheerio = require('cheerio');
+
 
 
 var wordLetters = [];
@@ -14,8 +16,10 @@ var methods = {
 CreateHiddenWord: function(newWord){
      randomWord = word.turnToArray.selectedWord;
 
-    wordLetters = newWord.split('').join(',');
-    console.log(wordLetters);
+    wordLetters = newWord.split('').join(' ');
+    exports.splitWord = {
+        wordLetters: wordLetters
+    };
 }
 };
 
